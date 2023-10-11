@@ -1,13 +1,13 @@
 package ikapp;
 
-public class Person {
+public abstract class Person {
     private String firstName;
     private String lastName;
     private String userName;
     private String password;
     private static int userNameId = 103;
 
-    protected Person(String firstName, String lastName) {
+    public Person(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = String.valueOf(userNameId);

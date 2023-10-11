@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class SignUp {
 
     private void printWelcomeMessage() {
-        System.out.println("        Welcome to AJU!");
+        System.out.println("        Welcome to IKApp!");
         System.out.println();
     }
 
@@ -46,7 +46,7 @@ public class SignUp {
         for (Admin admin : adminList) {
             if (admin.getUserName().equals(userName) && admin.getPassword().equals(password)) {
                 System.out.println("Welcome," + admin.getFirstName() + " " + admin.getLastName() + "!");
-                Admin.runAdmin();
+                admin.runAdmin();
             } else {
                 System.out.println("Sorry, we can't recognize you. Check your credentials and try again later.");
                 System.out.println("Goodbye!");

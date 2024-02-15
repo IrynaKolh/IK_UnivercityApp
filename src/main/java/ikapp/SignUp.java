@@ -1,5 +1,7 @@
 package ikapp;
 
+import ikapp.database.DBUtils;
+
 import java.util.List;
 import java.util.Scanner;
 
@@ -11,9 +13,26 @@ public class SignUp {
     }
 
     private void signUp() {
-        Admin.addAdmin(new Admin("Ivan", "Ivanov"));
+        Admin admin = new Admin("Ivan", "Sidorov");
+        admin.addAdmin(admin);
 
-        Admin.ptintAdmins();
+        System.out.println();
+        System.out.println("______________________________________");
+        System.out.println("Local Admins List");
+        Admin.printAdmins();
+
+        System.out.println();
+        System.out.println("______________________________________");
+        System.out.println("DB Users List");
+        List<Person> dbTablePerson = DBUtils.getTblPersonData();
+        System.out.println(dbTablePerson);
+
+        System.out.println();
+        System.out.println("______________________________________");
+        System.out.println("DB Admins List");
+        List<Admin> dbTableAdmin = DBUtils.getTblAdminData();
+        System.out.println(dbTableAdmin);
+
 
         System.out.println();
         System.out.println("Enter 'Q' for quit or");

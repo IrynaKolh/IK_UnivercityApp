@@ -1,0 +1,11 @@
+2024-02-20 22:57:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Столбец "role_id" не найден
+Column "role_id" not found [42122-220]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3492)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:301)
+	at ikapp.database.DBUtils.getTableAdminData(DBUtils.java:142)
+	at ikapp.database.DBClear.main(DBClear.java:20)

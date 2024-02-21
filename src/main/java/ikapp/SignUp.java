@@ -12,7 +12,7 @@ public class SignUp implements IExit {
     }
 
     private void signUp() {
-        admins =  DBUtils.getTblAdminData();  // get admins from DB
+        admins = DBUtils.getTableAdminData();  // get admins from DB
 
         if (admins.size() == 0) {
             Admin admin = new Admin("Ivan", "Sidorov");   // is no admins - create new
@@ -20,7 +20,7 @@ public class SignUp implements IExit {
         }
         admins.get(0).printAdminsList(); // print admins list
 
-        printQforExit();
+        printQForExit();
 
         Scanner in = new Scanner(System.in);
 
@@ -39,15 +39,14 @@ public class SignUp implements IExit {
     }
 
     private void checkCredentials(String userName, String password) {
-        for (Admin admin : admins) {
-            if (admin.getUserName().equals(userName) && admin.getPassword().equals(password) && admin.getId().startsWith("A")) {
-                System.out.println("Welcome," + admin.getFirstName() + " " + admin.getLastName() + "!");
+        for(Admin admin: admins) {
+            if(admin.getUserName().equals(userName) && admin.getPassword().equals(password) && admin.getRoleId().startsWith("A")) {
+                System.out.println("Welcome, " + admin.getFirstName() + " " + admin.getLastName() + "!");
                 admin.runAdmin();
-            } else {
-                exitIfAuthorizedUser();
-                return;
             }
         }
+
+        exitIfAuthorizedUser();
     }
 
     public void runIKApp(){
